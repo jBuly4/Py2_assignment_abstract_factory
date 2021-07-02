@@ -2,7 +2,7 @@
 
 На их основе Вам необходимо создать абстрактную фабрику **AbstractLevel** c классовыми методами **get_map()** и **get_objects()**. Её реализации должны носить имена **EasyLevel**, **MediumLevel** и **HardLevel**.
 
-![image](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/6b5Y_zd0EeiTdwrluHC9aA_5ec9222e4cd0970ced2161735238200d_ABS.png?expiry=1625184000000&hmac=EyOmRf5JPQySJ0tKQW5a8MA3AxedcSK1vxapur6Y6M0)
+![image](https://github.com/jBuly4/Py2_assignment_abstract_factory/blob/master/pic.png)
 
 ```
 import random
