@@ -1,3 +1,5 @@
+import random
+
 class AbstractLevel:
     @classmethod
     def get_map(Class):
@@ -11,15 +13,15 @@ class AbstractLevel:
 class EasyLevel(AbstractLevel):
     class Map:
         def __init__(self):
-        self._map = [[0 for j in range(5)] for i in range(5)]
-        for i in range(5):
-            for j in range(5):
-                if i == 0 or j == 0 or i == 4 or j == 4:
-                    # граница карты
-                    self._map[j][i] = -1
-                else:
-                    # случайная характеристика области
-                    self._map[j][i] = random.randint(0, 2)
+            self._map = [[0 for j in range(5)] for i in range(5)]
+            for i in range(5):
+                for j in range(5):
+                    if i == 0 or j == 0 or i == 4 or j == 4:
+                        # граница карты
+                        self._map[j][i] = -1
+                    else:
+                        # случайная характеристика области
+                        self._map[j][i] = random.randint(0, 2)
 
         def get_map(self):
             return self._map
@@ -27,8 +29,8 @@ class EasyLevel(AbstractLevel):
 
     class Objects:
         def __init__(self):
-        # размещаем переход на след. уровень
-        self.objects = [('next_lvl', (2, 2))]
+            # размещаем переход на след. уровень
+            self.objects = [('next_lvl', (2, 2))]
 
         def get_objects(self, map_obj):
             # размещаем противников
@@ -51,16 +53,16 @@ class EasyLevel(AbstractLevel):
 
 class MediumLevel(AbstractLevel):
     class Map:
-        ef __init__(self):
-        self._map = [[0 for j in range(8)] for i in range(8)]
-        for i in range(8):
-            for j in range(8):
-                if i == 0 or j == 0 or i == 7 or j == 7:
-                    # граница карты
-                    self._map[j][i] = -1
-                else:
-                    # случайная характеристика области
-                    self._map[j][i] = random.randint(0, 2)
+        def __init__(self):
+            self._map = [[0 for j in range(8)] for i in range(8)]
+            for i in range(8):
+                for j in range(8):
+                    if i == 0 or j == 0 or i == 7 or j == 7:
+                        # граница карты
+                        self._map[j][i] = -1
+                    else:
+                        # случайная характеристика области
+                        self._map[j][i] = random.randint(0, 2)
 
         def get_map(self):
             return self._map
@@ -68,8 +70,8 @@ class MediumLevel(AbstractLevel):
 
     class Objects:
         def __init__(self):
-        # размещаем переход на след. уровень
-        self.objects = [('next_lvl', (4, 4))]
+            # размещаем переход на след. уровень
+            self.objects = [('next_lvl', (4, 4))]
 
         def get_objects(self, map_obj):
             # размещаем врагов
@@ -92,15 +94,15 @@ class MediumLevel(AbstractLevel):
 class HardLevel(AbstractLevel):
     class Map:
         def __init__(self):
-        self._map = [[0 for j in range(10)] for i in range(10)]
-        for i in range(10):
-            for j in range(10):
-                if i == 0 or j == 0 or i == 9 or j == 9:
-                    # граница карты
-                    self._map[j][i] = -1
-                else:
-                    # характеристика области (-1 для непроходимой обл.)
-                    self._map[j][i] = random.randint(-1, 8)
+            self._map = [[0 for j in range(10)] for i in range(10)]
+            for i in range(10):
+                for j in range(10):
+                    if i == 0 or j == 0 or i == 9 or j == 9:
+                        # граница карты
+                        self._map[j][i] = -1
+                    else:
+                        # характеристика области (-1 для непроходимой обл.)
+                        self._map[j][i] = random.randint(-1, 8)
 
         def get_map(self):
             return self._map
@@ -108,8 +110,8 @@ class HardLevel(AbstractLevel):
 
     class Objects:
         def __init__(self):
-        # размещаем переход на след. уровень
-        self.objects = [('next_lvl', (5, 5))]
+            # размещаем переход на след. уровень
+            self.objects = [('next_lvl', (5, 5))]
 
         def get_objects(self, map_obj):
             # размещаем врагов
